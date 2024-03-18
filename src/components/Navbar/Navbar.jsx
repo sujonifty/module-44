@@ -5,7 +5,8 @@ import { AiOutlineCloseSquare } from "react-icons/ai";
 
 
 const Navbar = () => {
-    const [open,setOpen]=useState(false)
+    const [open,setOpen]=useState(false);
+
     const routes = [
         { id: 1, name: 'Home', path: '/' },
         { id: 2, name: 'About', path: '/about' },
@@ -23,7 +24,7 @@ const Navbar = () => {
                 }
             </div>
             
-            <ul className="md:flex text-left font-bold bg-slate-200 p-2">
+            <ul className= {`absolute md:static duration-1000 ${open ? 'top-[3.25rem]':'-top-60'} md:flex text-left font-bold md:bg-blue-50 `}>
             {
                 routes.map(route =><Link key={route.id} route={route}></Link>)
             }
