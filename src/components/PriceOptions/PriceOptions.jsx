@@ -1,52 +1,60 @@
+import { useEffect, useState } from "react";
 import PriceOption from "../PriceOption/PriceOption";
 
 const PriceOptions = () => {
-    const PriceOptions=[
+  const gymOfferings = [
+    {
+      id: 1,
+      name: "Basic Gym Membership",
+      price: "$30",
+      features: ["Equipment Access", "Locker Room", "Wi-Fi", "Towel Service"]
+    },
+    {
+      id: 2,
+      name: "Premium Gym Membership",
+      price: "$50",
+      features: ["Equipment Access", "Locker Room", "Fitness Classes", "Personal Trainer", "Swimming Pool", "Sauna"]
+    },
+    {
+      id: 3,
+      name: "10 PT Sessions",
+      price: "$400",
+      features: ["1-on-1 Training", "Custom Plan", "Progress Tracking"]
+    },
+    {
+      id: 4,
+      name: "Group Fitness Pass",
+      price: "$80",
+      features: ["Unlimited Classes", "Variety", "Experienced Instructors"]
+    },
+    {
+      id: 5,
+      name: "Sauna & Steam Access",
+      price: "$20",
+      features: ["Sauna & Steam", "Ambiance", "Towel Service"]
+    },
+    {
+      id: 6,
+      name: "Nutritional Counseling",
+      price: "$75",
+      features: ["1-hr Session", "Meal Plan", "Guidance"]
+    }
+  ];
+
+
+
+  return (
+    <div>
+      <h2 className="text-3xl">Best price</h2>
+      <div className='grid  md:grid-cols-3 lg:grid-cols-4 gap-5'>
         {
-          "id": 1,
-          "name": "Gym Membership - Basic",
-          "price": "$30/month",
-          "features": ["Access to gym equipment", "Locker room access"]
-        },
-        {
-          "id": 2,
-          "name": "Gym Membership - Premium",
-          "price": "$50/month",
-          "features": ["Access to gym equipment", "Locker room access", "Group fitness classes", "Personal trainer consultation"]
-        },
-        {
-          "id": 3,
-          "name": "Personal Training Package - 10 sessions",
-          "price": "$400",
-          "features": ["10 one-on-one personal training sessions with certified trainer"]
-        },
-        {
-          "id": 4,
-          "name": "Group Fitness Classes - Monthly Pass",
-          "price": "$80/month",
-          "features": ["Unlimited access to group fitness classes"]
-        },
-        {
-          "id": 5,
-          "name": "Sauna and Steam Room Access",
-          "price": "$20/month",
-          "features": ["Access to sauna and steam room facilities"]
-        },
-        {
-          "id": 6,
-          "name": "Nutritional Counseling Session",
-          "price": "$75/session",
-          "features": ["1-hour session with certified nutritionist"]
+          gymOfferings.map(option => <PriceOption key={option.id} option={option}></PriceOption>)
+
         }
-      ]
-    return (
-        <div>
-            <h2 className="text-3xl">Best price</h2>
-            {
-                PriceOptions.map(option=><PriceOption key={Option.id} option={option}></PriceOption>)
-            }
-        </div>
-    );
+      </div>
+
+    </div>
+  );
 };
 
 export default PriceOptions;

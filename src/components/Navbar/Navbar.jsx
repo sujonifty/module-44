@@ -20,10 +20,10 @@ const Navbar = () => {
             <div className="md:hidden  text-2xl" onClick={()=>setOpen(!open)}>
                 {
                     open===true?
+                    
                     <AiOutlineCloseSquare />:<GiHamburgerMenu  />
                 }
             </div>
-            
             <ul className= {`absolute md:static duration-1000 ${open ? 'top-[3.25rem]':'-top-60'} md:flex text-left font-bold md:bg-blue-50 `}>
             {
                 routes.map(route =><Link key={route.id} route={route}></Link>)
